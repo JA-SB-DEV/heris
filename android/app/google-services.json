@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "620232038288",
+    "project_id": "inventariores-6d31d",
+    "storage_bucket": "inventariores-6d31d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620232038288:android:d6cc49e97df5d64fb00515",
+        "android_client_info": {
+          "package_name": "com.example.heris"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBncE1NZys5yvoprR8yi3oOjRvJSE021cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
