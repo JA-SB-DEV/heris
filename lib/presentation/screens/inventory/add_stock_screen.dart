@@ -50,7 +50,7 @@ class _AddStockScreenState extends State<AddStockScreen> {
         itemId: _selectedItem!.id, // ID del item seleccionado
         quantityReceived: quantity,
         // TODO: Necesitamos el ID de la bodega principal aquí
-        locationId: 'bodega_principal_id', // ¡REEMPLAZAR ESTO!
+        locationId: 'EBn1UKx7rLrnk3QcItZe', // ¡REEMPLAZAR ESTO!
       );
 
       if (mounted) {

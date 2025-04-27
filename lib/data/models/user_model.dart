@@ -6,7 +6,11 @@ class UserModel {
   final String lastName;
   final String email;
   final String phone; // Con indicativo
-  final String? role; // Opcional por ahora (ej: 'admin', 'manager', 'staff')
+  final String? role; // ej: 'superAdmin', 'sedeAdmin', 'staff'
+  // --- NUEVOS CAMPOS (Nullables) ---
+  final String? assignedLocationId;   // ID de la sede asignada (si aplica)
+  final String? assignedLocationName; // Nombre de la sede asignada (si aplica)
+  // ---------------------------------
   final Timestamp createdAt; // Fecha de creación
 
   UserModel({
@@ -15,7 +19,9 @@ class UserModel {
     required this.lastName,
     required this.email,
     required this.phone,
-    this.role, // Valor por defecto o asignado después
+    this.role,
+    this.assignedLocationId,      // Añadir al constructor
+    this.assignedLocationName,    // Añadir al constructor
     required this.createdAt,
   });
 
@@ -28,6 +34,8 @@ class UserModel {
       'email': email,
       'phone': phone,
       'role': role,
+      'assignedLocationId': assignedLocationId,      // <-- Añadir al JSON
+      'assignedLocationName': assignedLocationName,    // <-- Añadir al JSON
       'createdAt': createdAt,
       // Puedes añadir 'updatedAt': FieldValue.serverTimestamp() en actualizaciones
     };
@@ -40,14 +48,15 @@ class UserModel {
       throw Exception("Documento de usuario no encontrado o datos inválidos!");
     }
     return UserModel(
-      uid: data['uid'] ?? doc.id, // Usa el ID del documento si 'uid' no está en los datos
+      uid: data['uid'] ?? doc.id,
       firstName: data['firstName'] ?? '',
       lastName: data['lastName'] ?? '',
       email: data['email'] ?? '',
       phone: data['phone'] ?? '',
       role: data['role'] as String?,
-      // Asegúrate de manejar el Timestamp correctamente
-      createdAt: data['createdAt'] ?? Timestamp.now(),
+      assignedLocationId: data['assignedLocationId'] as String?, // <-- Leer del JSON
+      assignedLocationName: data['assignedLocationName'] as String?, // <-- Leer del JSON
+      createdAt: data['createdAt'] ?? Timestamp.now(), // Manejar Timestamp
     );
   }
 }
