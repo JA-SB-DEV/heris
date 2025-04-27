@@ -30,18 +30,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    # --- Firebase ---
-  # Core de Firebase - ¡Obligatorio para cualquier servicio de Firebase!
+
   firebase_core: ^2.32.0 # Usa la última versión estable disponible
-
-  # Cloud Firestore - Para interactuar con la base de datos Firestore
   cloud_firestore: ^4.17.5 # Usa la última versión estable disponible
-
-  # --- Gestión de Estado ---
-  # Provider - El gestor de estado que elegimos para empezar
   provider: ^6.1.2 # Usa la última versión estable disponible
-
-  firebase_auth: ^4.20.0 # Usa la última versión estable disponible
+  firebase_auth: ^4.20.0 
+  pdf: ^3.10.8 # Reemplaza con la última versión estable
+  printing: ^5.12.0 # Reemplaza con la última versión estable
   intl: ^0.19.0
   # -----------------------
   cupertino_icons: ^1.0.8
